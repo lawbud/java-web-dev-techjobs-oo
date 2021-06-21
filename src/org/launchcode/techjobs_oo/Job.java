@@ -42,6 +42,73 @@ public class Job {
     }
 
     @Override
+    public String toString() {
+        String nameOut;
+        String employerOut;
+        String locOut;
+        String postOut;
+        String coreOut;
+
+        if (this.getName().toString().isEmpty()){
+            nameOut ="Data Not Available";
+
+        } else{
+            nameOut = this.getName().toString();
+        }
+
+
+
+        if (this.getEmployer().toString().isEmpty()){
+           employerOut ="Data Not Available";
+
+        } else{
+            employerOut = this.getEmployer().toString();
+        }
+
+
+
+        if (this.getLocation().toString().isEmpty()){
+            locOut="Data Not Available";
+
+        } else{
+            locOut = this.getLocation().toString();
+        }
+
+
+
+        if (this.getPositionType().toString().isEmpty()){
+           postOut = "Data Not Available";
+
+        } else{
+            postOut = this.getPositionType().toString();
+        }
+
+
+
+        if (this.getCoreCompetency().toString().isEmpty()){
+            coreOut ="Data Not Available";
+
+        } else{
+            coreOut = this.getCoreCompetency().toString();
+        }
+
+
+
+
+        return
+                "\n" +
+                        "ID: " + this.getId() + "\n" +
+                        "Name: " + this.getName() + "\n" +
+                        "Employer: " + employerOut + "\n" +
+                        "Location: " + this.getLocation() + "\n" +
+                        "Position Type: " + this.getPositionType() + "\n" +
+                        "Core Competency: " + this.getCoreCompetency() +
+                        "\n";
+
+
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(id);
     }
