@@ -20,14 +20,15 @@ public class Job {
         id = nextId;
         nextId++;
     }
-    public Job(String name,Employer employer,Location location,
-               PositionType positionType,CoreCompetency coreCompetency ) {
+
+    public Job(String name, Employer employer, Location location,
+               PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.coreCompetency = coreCompetency;
         this.employer = employer;
-        this.location =location;
-        this.positionType =positionType;
+        this.location = location;
+        this.positionType = positionType;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -49,60 +50,49 @@ public class Job {
         String postOut;
         String coreOut;
 
-        if (this.getName().toString().isEmpty()){
-            nameOut ="Data Not Available";
-
-        } else{
-            nameOut = this.getName().toString();
+        if (this.getName().isEmpty()) {
+            nameOut = "Data Not Available";
+        } else {
+            nameOut = this.getName();
         }
 
 
-
-        if (this.getEmployer().toString().isEmpty()){
-           employerOut ="Data Not Available";
-
-        } else{
+        if (this.getEmployer().toString().isEmpty()) {
+            employerOut = "Data Not Available";
+        } else {
             employerOut = this.getEmployer().toString();
         }
 
 
-
-        if (this.getLocation().toString().isEmpty()){
-            locOut="Data Not Available";
-
-        } else{
+        if (this.getLocation().toString().isEmpty()) {
+            locOut = "Data Not Available";
+        } else {
             locOut = this.getLocation().toString();
         }
 
 
-
-        if (this.getPositionType().toString().isEmpty()){
-           postOut = "Data Not Available";
-
-        } else{
+        if (this.getPositionType().toString().isEmpty()) {
+            postOut = "Data Not Available";
+        } else {
             postOut = this.getPositionType().toString();
         }
 
 
-
-        if (this.getCoreCompetency().toString().isEmpty()){
-            coreOut ="Data Not Available";
-
-        } else{
+        if (this.getCoreCompetency().toString().isEmpty()) {
+            coreOut = "Data Not Available";
+        } else {
             coreOut = this.getCoreCompetency().toString();
         }
 
 
-
-
-        return
+         return
                 "\n" +
                         "ID: " + this.getId() + "\n" +
-                        "Name: " + this.getName() + "\n" +
+                        "Name: " + nameOut + "\n" +
                         "Employer: " + employerOut + "\n" +
-                        "Location: " + this.getLocation() + "\n" +
-                        "Position Type: " + this.getPositionType() + "\n" +
-                        "Core Competency: " + this.getCoreCompetency() +
+                        "Location: " + locOut + "\n" +
+                        "Position Type: " + postOut + "\n" +
+                        "Core Competency: " + coreOut +
                         "\n";
 
 

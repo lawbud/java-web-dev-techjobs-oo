@@ -1,7 +1,9 @@
 package org.launchcode.techjobs_oo.Tests;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
+
 import static org.junit.Assert.*;
 
 
@@ -46,36 +48,39 @@ public class JobTest {
     public void testJobsForEquality() {
         assertEquals(false, testJob2.equals(testJob3));
     }
+
     @Test
-    public void blankLines(){
-        String str  =testJob1.toString();
-        char firstChar =str.charAt(0);
-        char lastChar =str.charAt(str.length()-1);
-        assertEquals("\n",Character.toString(firstChar));
-        assertEquals("\n",Character.toString(lastChar));
+    public void blankLines() {
+        String str = testJob1.toString();
+        char firstChar = str.charAt(0);
+        char lastChar = str.charAt(str.length() - 1);
+        assertEquals("\n", Character.toString(firstChar));
+        assertEquals("\n", Character.toString(lastChar));
     }
+
     @Test
-    public void labelsAndData(){
-        String str =testJob1.toString();
+    public void labelsAndData() {
+        String str = testJob1.toString();
         String expected = "\n" +
-                "ID: 1\n" +
+                "ID: 21\n" +
                 "Name: Product tester\n" +
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
                 "Position Type: Quality control\n" +
                 "Core Competency: Persistence\n";
-               assertEquals(expected,str);
+        assertEquals(expected, str);
     }
+
     @Test
-    public void testForBlank(){
-      String str = testJob4.toString();
-      String expected = "\n" +
-              "ID: 4\n" +
-              "Name: Product tester\n" +
-              "Employer: Data Not Available\n" +
-              "Location: Desert\n" +
-              "Position Type: Quality control\n" +
-              "Core Competency: Persistence\n";
-      assertEquals(expected,str);
+    public void testForBlank() {
+        String str = testJob4.toString();
+        String expected = "\n" +
+                "ID: 20\n" +
+                "Name: Product tester\n" +
+                "Employer: Data Not Available\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence\n";
+        assertEquals(expected, str);
     }
 }
